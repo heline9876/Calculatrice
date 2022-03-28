@@ -26,6 +26,11 @@ class Texte():
         chaine.configure(state="disabled")
         
     def supprimer(self):
+        if self.reponse is True:
+            chaine.configure(state="normal")
+            chaine.delete(0.0, END)
+            chaine.configure(state="disabled")
+            return
         texte = list(chaine.get(0.0, END))
         for _ in range(2):
             texte.pop(-1)
@@ -61,7 +66,6 @@ class Texte():
             chaine.configure(state="disabled")
         self.reponse = True
 
-
 texte = Texte()
 
 root = Tk()
@@ -73,7 +77,6 @@ frame.grid(row=1, column=0, columnspan=100)
 
 scroll_bar_x = Scrollbar(frame, orient=HORIZONTAL)
 chaine = Text(frame, width=20, height=3, bg="ivory", state="disabled", xscrollcommand=scroll_bar_x.set, wrap="none")
-chaine.tag_configure('tag-right', justify='right')
 scroll_bar_x.config(command=chaine.xview)
 font = tkfont.Font(font=chaine['font'])
 font = tkfont.Font(family="Consolas", size=15)
