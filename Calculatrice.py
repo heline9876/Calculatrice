@@ -76,7 +76,7 @@ frame = Frame(root)
 frame.grid(row=1, column=0, columnspan=100)
 
 scroll_bar_x = Scrollbar(frame, orient=HORIZONTAL)
-chaine = Text(frame, width=20, height=3, bg="ivory", state="disabled", xscrollcommand=scroll_bar_x.set, wrap="none")
+chaine = Text(frame, width=53, height=3, bg="ivory", state="disabled", xscrollcommand=scroll_bar_x.set, wrap="none")
 scroll_bar_x.config(command=chaine.xview)
 font = tkfont.Font(font=chaine['font'])
 font = tkfont.Font(family="Consolas", size=15)
@@ -86,7 +86,7 @@ scroll_bar_x.pack(fill=X)
 
 bouton = []
 for j, i in enumerate(range(9), start=1):
-    bouton_i = Button(root, width=7, height=3, text=j, command=lambda temp = j: texte.ecrire(str(temp)))
+    bouton_i = Button(root, width=20, height=3, text=j, command=lambda temp = j: texte.ecrire(str(temp)))
     bouton.append(bouton_i)
 bouton = [bouton[0], bouton[1], bouton[2], bouton[5], bouton[4], bouton[3], bouton[6], bouton[7], bouton[8]]
 bouton.reverse()
@@ -96,17 +96,17 @@ for i in range(3):
         bouton[a].grid(row=i + 3, column=j)
         a += 1
 
-Button(root, width=7, height=3, text="0", command=lambda : texte.ecrire("0")).grid(row=6, column=0)
-Button(root, width=7, height=3, text=".", command=lambda : texte.ecrire(".")).grid(row=6, column=1)
-Button(root, width=7, height=3, text="=", command=lambda : texte.resoudre(), bg="#2596be").grid(row=6, column=2)
-Button(root, width=7, height=3, text="(", command=lambda : texte.ecrire("("), foreground="#2596be").grid(row=2, column=0)
-Button(root, width=7, height=3, text=")", command=lambda : texte.ecrire(")"), foreground="#2596be").grid(row=2, column=1)
-Button(root, width=7, height=3, text="C", command=lambda : texte.supprimer_tout(), foreground="#2596be").grid(row=2, column=2)
-Button(root, width=7, height=3, text="⇍", command=lambda : texte.supprimer(), foreground="#2596be").grid(row=2, column=3)
-Button(root, width=7, height=3, text="÷", command=lambda : texte.ecrire("÷"), foreground="#2596be").grid(row=3, column=3)
-Button(root, width=7, height=3, text="x", command=lambda : texte.ecrire("x"), foreground="#2596be").grid(row=4, column=3)
-Button(root, width=7, height=3, text="-", command=lambda : texte.ecrire("-"), foreground="#2596be").grid(row=5, column=3)
-Button(root, width=7, height=3, text="+", command=lambda : texte.ecrire("+"), foreground="#2596be").grid(row=6, column=3)
+Button(root, width=20, height=3, text="0", command=lambda : texte.ecrire("0")).grid(row=6, column=0)
+Button(root, width=20, height=3, text=".", command=lambda : texte.ecrire(".")).grid(row=6, column=1)
+Button(root, width=20, height=3, text="=", command=lambda : texte.resoudre(), bg="#2596be").grid(row=6, column=2)
+Button(root, width=20, height=3, text="(", command=lambda : texte.ecrire("("), foreground="#2596be").grid(row=2, column=0)
+Button(root, width=20, height=3, text=")", command=lambda : texte.ecrire(")"), foreground="#2596be").grid(row=2, column=1)
+Button(root, width=20, height=3, text="C", command=lambda : texte.supprimer_tout(), foreground="#2596be").grid(row=2, column=2)
+Button(root, width=20, height=3, text="⇍", command=lambda : texte.supprimer(), foreground="#2596be").grid(row=2, column=3)
+Button(root, width=20, height=3, text="÷", command=lambda : texte.ecrire("÷"), foreground="#2596be").grid(row=3, column=3)
+Button(root, width=20, height=3, text="x", command=lambda : texte.ecrire("x"), foreground="#2596be").grid(row=4, column=3)
+Button(root, width=20, height=3, text="-", command=lambda : texte.ecrire("-"), foreground="#2596be").grid(row=5, column=3)
+Button(root, width=20, height=3, text="+", command=lambda : texte.ecrire("+"), foreground="#2596be").grid(row=6, column=3)
 
 root.bind("0", lambda e : texte.ecrire("0"))
 root.bind("1", lambda e : texte.ecrire("1"))
